@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://yashpatle23.github.io/frontend";
 
 export const loginUser = async (email, password) => {
   const response = await axios.post(`${API_BASE_URL}/auth/login/`, { email, password });
