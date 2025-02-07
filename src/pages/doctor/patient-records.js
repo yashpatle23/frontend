@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
-import axios from 'axios';
-import withAuth from '../../components/withAuth';
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import axios from "axios";
+import withAuth from "../../components/withAuth";
 
 const PatientRecords = () => {
   const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [patients, setPatients] = useState([]);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetchPatients();
@@ -15,19 +15,22 @@ const PatientRecords = () => {
 
   const fetchPatients = async () => {
     try {
-      const token = localStorage.getItem('token');
-      const response = await axios.get('/api/doctor/patients', {
-        headers: { Authorization: `Bearer ${token}` }
+      const token = localStorage.getItem("token");
+      const response = await axios.get("/api/doctor/patients", {
+        headers: { Authorization: `Bearer ${token}` },
       });
       setPatients(response.data.patients);
     } catch (error) {
-      setError('Failed to load patients');
+      setError("Failed to load patients");
     }
   };
 
-  const filteredPatients = patients.filter(patient =>
-    patient.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    patient.patientId.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredPatients = patients.filter(
+    (patient) =>
+      (patient?.name?.toLowerCase() || "").includes(searchTerm.toLowerCase()) ||
+      (patient?.patientId?.toLowerCase() || "").includes(
+        searchTerm.toLowerCase()
+      )
   );
 
   return (
@@ -36,7 +39,7 @@ const PatientRecords = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <h1 className="text-2xl text-white font-bold">Patient Records</h1>
           <button
-            onClick={() => router.push('/doctor/landing')}
+            onClick={() => router.push("/doctor/landing")}
             className="bg-blue-500 px-4 py-2 text-white rounded hover:bg-blue-700"
           >
             Back to Dashboard
@@ -90,13 +93,17 @@ const PatientRecords = () => {
                     <td className="px-6 py-4">{patient.name}</td>
                     <td className="px-6 py-4">{patient.age}</td>
                     <td className="px-6 py-4">
-                      {patient.lastVisit 
+                      {patient.lastVisit
                         ? new Date(patient.lastVisit).toLocaleDateString()
-                        : 'No visits yet'}
+                        : "No visits yet"}
                     </td>
                     <td className="px-6 py-4">
                       <button
-                        onClick={() => router.push(`/doctor/patient-records/${patient.patientId}`)}
+                        onClick={() =>
+                          router.push(
+                            `/doctor/patient-records/${patient.patientId}`
+                          )
+                        }
                         className="text-blue-600 hover:text-blue-900"
                       >
                         View Records
@@ -113,4 +120,4 @@ const PatientRecords = () => {
   );
 };
 
-export default withAuth(PatientRecords, ['doctor']);
+export default withAuth(PatientRecords, ["doctor"]);
