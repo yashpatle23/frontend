@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'your-repo-name'; // Change this to your GitHub repo name
+const repoName = 'frontend'; // Change this to your GitHub repo name
 
 const nextConfig = {
   reactStrictMode: true,
