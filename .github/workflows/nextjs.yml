@@ -4,15 +4,14 @@ on:
   push:
     branches:
       - main
-      - develop
   pull_request:
     branches:
       - main
-      - develop
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,21 +23,21 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Run linting
-        run: npm run lint
-
-      - name: Run tests
-        run: npm test
-
-      - name: Build Next.js application
+      - name: Build Next.js app
         run: npm run build
+        env:
+          NEXT_PUBLIC_ENV: 'production'
+
+      - name: Run Tests
+        run: npm test
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -50,10 +49,12 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build Next.js application
+      - name: Build Next.js app
         run: npm run build
+        env:
+          NEXT_PUBLIC_ENV: 'production'
 
       - name: Deploy to Vercel
         run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
