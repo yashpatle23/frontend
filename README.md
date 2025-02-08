@@ -2,15 +2,21 @@
 
 A modern web application for managing hospital appointments, patient records, and doctor schedules.
 
+🌐 **Live Demo:** [https://frontend-uk4g.vercel.app/](https://frontend-uk4g.vercel.app/)
+
+📹 **Demo Video:** [Watch Project Demo](Agoro%20AI%20Video%20Submission.mp4)
+
 ## Features
 
 - 🏥 Patient Management
+
   - Registration and authentication
   - Appointment booking and management
   - Medical record access
   - Profile management
 
 - 👨‍⚕️ Doctor Management
+
   - Authentication and dashboard
   - Patient records access
   - Appointment management
@@ -31,21 +37,40 @@ A modern web application for managing hospital appointments, patient records, an
 - **Email**: Nodemailer
 - **Styling**: TailwindCSS
 
+## Quick Start
+
+1. **Visit the Live Demo**
+   - Go to [https://frontend-uk4g.vercel.app/](https://frontend-uk4g.vercel.app/)
+   - Try the demo credentials:
+     - Doctor login: doctor@example.com / password123
+     - Patient login: patient@example.com / password123
+
+2. **Or Run Locally**
+   ```bash
+   git clone https://github.com/yashpatle23/frontend.git
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
 ## Getting Started
 
 1. **Clone the repository**
+
    ```bash
-   git clone https://github.com/yourusername/hospital-management.git
-   cd hospital-management
+   git clone https://github.com/yashpatle23/frontend.git
+   cd frontend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Environment Setup**
    Create a `.env.local` file in the root directory:
+
    ```env
    MONGODB_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret
@@ -54,6 +79,7 @@ A modern web application for managing hospital appointments, patient records, an
    ```
 
 4. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -80,16 +106,19 @@ frontend/
 ## API Routes
 
 - **Authentication**
+
   - `POST /api/auth/login`
   - `POST /api/auth/register`
 
 - **Appointments**
+
   - `GET /api/appointments`
   - `POST /api/appointments`
   - `PUT /api/appointments/:id`
   - `DELETE /api/appointments/:id`
 
 - **Patients**
+
   - `GET /api/patients`
   - `GET /api/patients/:id`
   - `PUT /api/patients/:id`
@@ -98,6 +127,17 @@ frontend/
   - `GET /api/doctors`
   - `GET /api/doctors/:id`
   - `PUT /api/doctors/:id`
+
+## Demo Video
+
+Watch our project demonstration video to see all features in action:
+- Full walkthrough of patient and doctor interfaces
+- Appointment booking process
+- Medical records management
+- Real-time notifications
+- Mobile responsiveness
+
+[Download Demo Video](Agoro%20AI%20Video%20Submission.mp4)
 
 ## Contributing
 
@@ -111,6 +151,4 @@ frontend/
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Support
 
-For support, email support@yourdomain.com or raise an issue in the repository.
