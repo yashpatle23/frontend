@@ -130,14 +130,16 @@ frontend/
 
 ## Demo Video
 
-Watch our project demonstration video to see all features in action:
-- Full walkthrough of patient and doctor interfaces
-- Appointment booking process
-- Medical records management
-- Real-time notifications
-- Mobile responsiveness
+https://github.com/yashpatle23/frontend/assets/videos/Agoro%20AI%20Video%20Submission.mp4
 
-[Download Demo Video](Agoro%20AI%20Video%20Submission.mp4)
+<video width="100%" controls>
+  <source src="https://github.com/yashpatle23/frontend/assets/videos/Agoro%20AI%20Video%20Submission.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+Alternatively, you can:
+- [Download Demo Video](Agoro%20AI%20Video%20Submission.mp4)
+- [Watch on YouTube](your-youtube-link-here) <!-- Add your YouTube link if available -->
 
 ## Contributing
 
