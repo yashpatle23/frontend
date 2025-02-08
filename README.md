@@ -4,9 +4,12 @@ A modern web application for managing hospital appointments, patient records, an
 
 🌐 **Live Demo:** [https://frontend-uk4g.vercel.app/](https://frontend-uk4g.vercel.app/)
 
-📹 **Demo Video:** [Watch Project Demo](Agoro%20AI%20Video%20Submission.mp4)
+📹 **Demo Video:**
+
+[Watch Project Demo](https://github.com/user-attachments/assets/e1fa6efb-e55d-4336-ac87-6a018ecb9914)
 
 ## Features
+
 
 - 🏥 Patient Management
 
